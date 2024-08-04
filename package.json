@@ -1,0 +1,19 @@
+{
+  "name": "front-end-entrance-exam",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.8.0",
+    "eslint": "^9.8.0",
+    "eslint-plugin-react": "^7.35.0",
+    "globals": "^15.9.0",
+    "jshint": "^2.13.6",
+    "vite": "^5.3.5"
+  }
+}

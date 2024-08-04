@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CV</title>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="content-container">
+      <div class="card-container-photo">
+        <div class="profile-photo">
+          <img id="profileImage" src="default-photo.jpg" alt="Profile Photo">
+        </div>
+        <input type="file" id="photoUpload" accept="image/*" style="display: none;">
+      </div>
+      <div class="card-container">
+        <h1>Hello,👋 I am</h1>
+        <div class="profile-info">
+          <h2 id="profileName" contenteditable="true">Graham Hunt</h2>
+          <p id="profileTitle" contenteditable="true">Brand/Logo Designer</p>
+        </div>
+      </div>
+      <div class="card-container-languages">
+        <h1>Languages</h1>
+        <div class="languages">
+          <div id="languagesList"></div>
+        </div>
+        <button id="addLanguageButton" class="wave-button">Add Language</button>
+      </div>
+      <div class="card-container-experience">
+        <h1>Experience</h1>
+        <div id="experienceList"></div>
+        <button id="addExperienceButton" class="wave-button">Add Experience</button>
+      </div>
+      <div class="card-container-tools">
+        <h1>Tools</h1>
+        <div id="toolsList"></div>
+        <button id="addToolButton" class="wave-button">Add Tool</button>
+      </div>
+      <div class="card-container-education">
+        <h1>Education</h1>
+        <div id="educationList"></div>
+        <button id="addEducationButton" class="wave-button">Add Education</button>
+      </div>
+      <div class="card-container-interests">
+        <h1>Interests</h1>
+        <div class="interests">
+          <div id="interestsList"></div>
+        </div>
+        <button id="addInterestButton" class="wave-button">Add Interest</button>
+      </div>
+      <div class="card-container-email">
+        <div class="email">
+          <h1 id="emailHeading">Let’s chat! I’m ready to work with exciting projects!</h1>
+          <p id="emailAddress" contenteditable="true">youremail@mail.ru</p>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="./js/main.js"></script>
+
+    <!-- Language Modal -->
+    <div id="languageModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Add Language</h2>
+        <label for="languageSelect">Language:</label>
+        <select id="languageSelect">
+          <option value="English">English</option>
+          <option value="Hindi">Hindi</option>
+          <option value="Spanish">Spanish</option>
+        </select>
+        <label for="languagePercentage">Proficiency Percentage:</label>
+        <input type="number" id="languagePercentage">
+        <button id="saveLanguageButton" class="wave-button">Save</button>
+        <button id="cancelLanguageButton" class="wave-button">Cancel</button>
+      </div>
+    </div>
+
+    <!-- Interest Modal -->
+    <div id="interestModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Add Interest</h2>
+        <label for="interestInput">Interest:</label>
+        <input type="text" id="interestInput">
+        <button id="saveInterestButton" class="wave-button">Save</button>
+        <button id="cancelInterestButton" class="wave-button">Cancel</button>
+      </div>
+    </div>
+
+    <!-- Education Modal -->
+    <div id="educationModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Add Education</h2>
+        <label for="educationYearStart">Start Year:</label>
+        <input type="number" id="educationYearStart" min="1900" max="2100">
+        <label for="educationYearEnd">End Year:</label>
+        <input type="number" id="educationYearEnd" min="1900" max="2100">
+        <label for="educationDirection">Field of Study:</label>
+        <input type="text" id="educationDirection">
+        <label for="educationHashtags">Hashtags:</label>
+        <input type="text" id="educationHashtags">
+        <label for="educationPlace">Institution:</label>
+        <input type="text" id="educationPlace">
+        <button id="saveEducationButton" class="wave-button">Save</button>
+        <button id="cancelEducationButton" class="wave-button">Cancel</button>
+      </div>
+    </div>
+
+    <!-- Experience Modal -->
+    <div id="experienceModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Add Experience</h2>
+        <label for="experienceStartDate">Start Date:</label>
+        <input type="date" id="experienceStartDate">
+        <label for="experienceEndDate">End Date:</label>
+        <input type="date" id="experienceEndDate">
+        <label for="experiencePresent">
+          <input type="checkbox" id="experiencePresent"> Currently Employed
+        </label>
+        <label for="experienceTitle">Position:</label>
+        <input type="text" id="experienceTitle">
+        <label for="experienceCompany">Company:</label>
+        <input type="text" id="experienceCompany">
+        <label for="experienceDescription">Description:</label>
+        <textarea id="experienceDescription"></textarea>
+        <button id="saveExperienceButton" class="wave-button">Save</button>
+        <button id="cancelExperienceButton" class="wave-button">Cancel</button>
+      </div>
+    </div>
+
+    <!-- Tool Modal -->
+    <div id="toolModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Add Tool</h2>
+        <label for="toolCategory">Category:</label>
+        <select id="toolCategory">
+          <option value="design">Design</option>
+          <option value="no-code">No-Code</option>
+          <option value="artificial intelligence">Artificial Intelligence</option>
+        </select>
+        <label for="toolIcon">Icon:</label>
+        <select id="toolIcon"></select>
+        <button id="saveToolButton" class="wave-button">Save</button>
+        <button id="cancelToolButton" class="wave-button">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <button id="installButton" class="wave-button">Install</button>
+</body>
+
+</html>
