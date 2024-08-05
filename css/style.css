@@ -202,6 +202,7 @@ body {
   cursor: pointer;
   opacity: 0;
   transition: opacity 0.3s;
+  z-index: 1000;
 }
 
 .language-bar:hover .delete-button {
@@ -357,6 +358,7 @@ body {
   cursor: pointer;
   opacity: 0;
   transition: opacity 0.3s;
+  z-index: 1000;
 }
 
 .education-item:hover .delete-button {
